@@ -1,0 +1,47 @@
+.footer {
+  padding-top: 125px;
+  padding-bottom: 70px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D0CBFF 46.15%, #ADA5FF 75.31%, #867CF5 100%);
+
+  &__row {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    align-items: center;
+
+    &:nth-child(2) {
+      margin-top: 48px;
+
+      .footer-links {
+        color: rgba(61, 61, 61, 0.7);
+      }
+    }
+  }
+
+  &-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__phonenumber {
+    width: fit-content;
+    font-size: 40px;
+    font-weight: 700;
+    color: #222222;
+  }
+}
+
+@media screen and (max-width: 1159px) {
+  .footer {
+    &__row {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+    }
+
+    &-links {
+      gap: 8px 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

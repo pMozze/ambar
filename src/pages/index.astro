@@ -1,0 +1,328 @@
+---
+import "../styles/main.scss";
+
+import { getEntry, getCollection } from "astro:content";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icon from "../components/Icon.astro";
+
+const steps = await getCollection("steps");
+const advantages = await getCollection("advantages");
+const statistics = await getCollection("statistics");
+const faq = await getCollection("faq");
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Ambar</title>
+  </head>
+  <body>
+    <Header />
+    <section class="hero">
+      <div class="container">
+        <div class="hero__body">
+          <h1 class="hero__title">
+            Платите после получения и проверки качества
+          </h1>
+          <p class="hero__description">
+            Покупайте, продавайте, перевозите зерно по всей России всего за 1
+            клик с помощью нашей торговой площадки
+          </p>
+          <a class="hero__link button button_primary" href="#"
+            >Демо-версия сервиса</a
+          >
+        </div>
+        <img class="hero__image" src="/images/hero.jpg" alt="" />
+        <img
+          class="hero__background-image"
+          src="/images/hero-background.png"
+          alt=""
+        />
+        <div class="hero__background-light hero__background-light_left"></div>
+        <div class="hero__background-light hero__background-light_right"></div>
+      </div>
+    </section>
+    <section class="how-it-works" data-anchor-name="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__subtitle">Как это работает?</div>
+          <h2 class="section-header__title">Закажи сейчас, плати потом</h2>
+        </div>
+        <div class="how-it-works__body">
+          {
+            steps.map((step, index) => (
+              <div class="card">
+                <Icon className="card__icon" name={step.data.icon} />
+                <div class="card__title">{step.data.title}</div>
+                <div class="card__description">{step.body}</div>
+                <div class="card__number">
+                  {index > 9 ? index + 1 : `0${index + 1}`}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <section class="advantages container">
+      <div class="section-header">
+        <div class="section-header__subtitle section-header__subtitle_gray">
+          Преимущества сервиса
+        </div>
+        <h2 class="section-header__title">Оформить заказ легко и просто</h2>
+      </div>
+      <div class="advantages__body">
+        <div class="search">
+          <div class="search__body">
+            <h3 class="search__title">Удобная система поиска</h3>
+            <div class="search__description">
+              Позволяет выбрать цель заказа, вид зерна, объём поставки и
+              подобрать подходящего вам поставщика.
+              <br />
+              <br />
+              Поиск занимает 5 секунд, и вы можете отфильтровать поставщиков по рейтингу,
+              стоимости и срокам доставки, не обзванивая каждого.
+            </div>
+          </div>
+          <img
+            class="search__image"
+            src="/images/advantages/search.jpg"
+            alt=""
+          />
+        </div>
+        <div class="application-form">
+          <img
+            class="application-form__image"
+            src="/images/advantages/application-form.png"
+            alt=""
+          />
+          <div class="application-form__body">
+            <h3 class="application-form__title">Развернутая форма заявки</h3>
+            <p class="application-form__description">
+              Содержит сроки доставки, точку приема, статус заказа, сумму к
+              оплате и календарь событий.
+              <br />
+              <br />
+              Вся информация структурирована и находится в 1 месте, вы в любой момент
+              можете найти нужные данные за считанные секунды.
+            </p>
+          </div>
+        </div>
+        <div class="bloom bloom_1"></div>
+        <div class="finances">
+          <div class="finances__body">
+            <h3 class="finances__title">Полноценный раздел финансов</h3>
+            <p class="finances__description">
+              Полный список транзакций: платежи и списания с пояснениями. Вы
+              всегда знаете, когда и за что платите
+              <br />
+              <br />
+              Уведомления о задолженностях и сроках оплаты. Вы будете заранее планировать
+              бюджет и не пропустите оплату
+              <br />
+              <br />
+              Акты сверки за любые периоды. Вы можете выгружать отчеты в любое время
+              по мере необходимости
+            </p>
+          </div>
+          <img
+            class="finances__image"
+            src="/images/advantages/finances.jpg"
+            alt=""
+          />
+        </div>
+        <a class="button button_primary" href="#">Демо-версия сервиса</a>
+        <div class="bloom bloom_2"></div>
+        <div class="privacy">
+          <div class="privacy__body">
+            <h3 class="privacy__title">
+              Один кабинет для нескольких членов команды
+            </h3>
+            <p class="privacy__description">
+              Позволяет одновременно просматривать информацию всем сотрудникам.
+              Не нужно передавать ничего на словах и создавать эффект
+              «испорченного телефона»
+              <br />
+              <br />
+              Можно настраивать разные права доступа всем участникам команды. Если
+              вы не хотите, чтобы кто-то из сотрудников мог просматривать определенные
+              разделы, вы просто закрываете к ним доступ через систему
+            </p>
+            <div class="privacy-avatars">
+              <img
+                class="privacy-avatars__item"
+                src="/images/avatars/1.jpg"
+                alt=""
+              />
+              <img
+                class="privacy-avatars__item"
+                src="/images/avatars/2.jpg"
+                alt=""
+              />
+              <img
+                class="privacy-avatars__item"
+                src="/images/avatars/3.jpg"
+                alt=""
+              />
+              <img
+                class="privacy-avatars__item"
+                src="/images/avatars/4.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <img
+            class="privacy__image"
+            src="/images/advantages/privacy.jpg"
+            alt=""
+          />
+        </div>
+        <div class="notifications">
+          <h3 class="notifications__title">
+            Постоянное информирование клиентов в системе для нескольких членов
+            команды
+          </h3>
+          <div class="notifications__body">
+            <p class="notifications__description">
+              О получении товара, отгрузке, местонахождении водителя. Вы всегда
+              знаете, когда получите заказ и если что-то меняется вы первыми об
+              этом узнаете
+              <br />
+              <br />
+              О приближающихся сроках оплаты. Теперь вы не пропустите срок оплаты
+              и не уйдете в минус
+              <br />
+              <br />
+              О горячих акциях и выгодных предложениях. Ежедневно мы делаем рассылку
+              с самыми лучшими ценами и редкими находками
+            </p>
+            <img
+              class="notifications__image"
+              src="/images/advantages/notifications_1.png"
+              alt=""
+            />
+            <img
+              class="notifications__image"
+              src="/images/advantages/notifications_2.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="support">
+          <div class="support__body">
+            <h3 class="support__title">Поддержка клиентов 24 на 7</h3>
+            <p class="support__description">
+              Если у вас возникла проблема, вы всегда можете обратиться в службу
+              поддержки письменно либо позвонив нашему менеджеру.
+              <br />
+              <br />
+              Ответ на письменные тикеты вы получаете в течение 24 часов.
+              <br />
+              <br />
+              При срочных вопросах лучше всего звонить менеджеру, все вопросы решаются
+              в течение 1 часа.
+            </p>
+          </div>
+          <img
+            class="support__image"
+            src="/images/advantages/support.png"
+            alt=""
+          />
+        </div>
+        <a class="button button_primary" href="#">Демо-версия сервиса</a>
+      </div>
+    </section>
+    <section class="advantages-2">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__subtitle section-header__subtitle_gray">
+            Нас выбирают
+          </div>
+          <h2 class="section-header__title">Почему клиенты выбирают нас</h2>
+        </div>
+        <div class="advantages-2__body">
+          {
+            advantages.map((advantage) => (
+              <div class="card">
+                <Icon className="card__icon" name={advantage.data.icon} />
+                <h4 class="card__title">{advantage.data.title}</h4>
+                <p class="card__description">
+                  {advantage.data.shortDescription}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="advantages-2__statistic">
+          {
+            statistics.map((statisticsItem) => (
+              <div class="statistic-item">
+                <h3 class="statistic-item__title">
+                  {statisticsItem.data.plus
+                    ? `${statisticsItem.data.number}+`
+                    : statisticsItem.data.number}
+                </h3>
+                <p class="statistic-item__description">
+                  {statisticsItem.data.title}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <section class="demo">
+      <div class="container">
+        <div class="demo__body">
+          <div class="section-header section-header_left">
+            <div class="section-header__subtitle section-header__subtitle_gray">
+              Присоединяйся к нам
+            </div>
+            <h2 class="section-header__title">
+              Получи демо-версию сервиса уже сейчас
+            </h2>
+          </div>
+          <div class="demo__description">
+            Запишитесь на демонстрацию сервиса, где наш менджер подробно
+            расскажет о его работе
+          </div>
+          <a class="demo__button button button_primary" href="#"
+            >Демо-версия сервиса</a
+          >
+        </div>
+        <img class="demo__image" src="/images/dashboard.jpg" alt="" />
+        <img class="demo__image" src="/images/dashboard.jpg" alt="" />
+      </div>
+    </section>
+    <section class="faq" data-anchor-name="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__subtitle section-header__subtitle_gray">
+            FAQ
+          </div>
+          <h2 class="section-header__title">Отвечаем на ваши вопросы</h2>
+        </div>
+        <div class="faq__body">
+          {
+            faq.map((faqItem) => (
+              <div class="faq-item">
+                <h5 class="faq-item__question">{faqItem.data.question}</h5>
+                <p class="faq-item__answer">{faqItem.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <Footer />
+    <script>
+      import "../scripts/anchors";
+    </script>
+  </body>
+</html>

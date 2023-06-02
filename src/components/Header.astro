@@ -1,0 +1,53 @@
+---
+import Logotype from "./Logotype.astro";
+---
+
+<header class="header container">
+  <Logotype />
+  <div class="header-links">
+    <a
+      class="header-links__item"
+      href="#how-it-works"
+      data-anchor-target="how-it-works">Как это работает?</a
+    >
+    <a class="header-links__item" href="#faq" data-anchor-target="faq"
+      >Вопросы</a
+    >
+    <a class="header-links__item" href="tel:+78005553535">8 800 555 35 35</a>
+  </div>
+  <div class="header__buttons">
+    <button class="button button_secondary" type="button">Регистрация</button>
+    <button class="button button_primary" type="button">Вход</button>
+  </div>
+  <div class="hamburger-button">
+    <div class="hamburger-button__item"></div>
+    <div class="hamburger-button__item"></div>
+    <div class="hamburger-button__item"></div>
+  </div>
+  <div class="hamburger-menu">
+    <div class="hamburger-menu__buttons">
+      <button class="button button_secondary" type="button">Регистрация</button>
+      <button class="button button_primary" type="button">Вход</button>
+    </div>
+    <div class="hamburger-menu-links">
+      <a
+        class="hamburger-menu-links__item"
+        href="#how-it-works"
+        data-anchor-target="how-it-works">Как это работает?</a
+      >
+      <a class="hamburger-menu-links__item" href="#faq" data-anchor-target="faq"
+        >Вопросы</a
+      >
+      <a class="hamburger-menu-links__item" href="tel:+78005553535"
+        >8 800 555 35 35</a
+      >
+    </div>
+    <div class="hamburger-menu__button">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+<script>
+  import "../scripts/hamburger";
+</script>

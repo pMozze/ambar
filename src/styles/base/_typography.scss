@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-weight: 700;
+  src: url('/fonts/PT-Sans-Narrow-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 500;
+  src: url('/fonts/Roboto-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 700;
+  src: url('/fonts/Roboto-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 900;
+  src: url('/fonts/Roboto-Black.woff2') format('woff2');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'PT Sans Narrow';
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  font-size: 72px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 34px;
+}
+
+h5 {
+  font-size: 28px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  h1,
+  h2 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 34px;
+  }
+}

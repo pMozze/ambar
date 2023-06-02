@@ -1,0 +1,16 @@
+---
+import { Sprite } from "astro-icon";
+
+interface Props {
+  className?: string;
+  name: string;
+}
+
+const { className, name } = Astro.props;
+---
+
+<div class:list={[className, "icon"]}>
+  <Sprite.Provider>
+    <Sprite name={name} />
+  </Sprite.Provider>
+</div>

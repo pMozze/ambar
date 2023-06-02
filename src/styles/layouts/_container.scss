@@ -1,0 +1,17 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160px;
+}
+
+@media screen and (max-width: 1159px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .container {
+    max-width: 360px;
+  }
+}
