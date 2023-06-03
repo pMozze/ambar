@@ -1,7 +1,7 @@
 .footer {
   padding-top: 125px;
   padding-bottom: 70px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #D0CBFF 46.15%, #ADA5FF 75.31%, #867CF5 100%);
+  background: linear-gradient(180deg, #fbfbfb 0%, #D0CBFF 46.15%, #ADA5FF 75.31%, #867CF5 100%);
 
   &__row {
     display: grid;
@@ -13,6 +13,11 @@
 
       .footer-links {
         color: rgba(61, 61, 61, 0.7);
+
+        &__item:hover,
+        &__item:focus-visible {
+          color: darken(rgba(61, 61, 61, 0.7), 25);
+        }
       }
     }
   }
@@ -20,6 +25,15 @@
   &-links {
     display: flex;
     justify-content: space-between;
+
+    &__item {
+      transition: color 250ms;
+    }
+
+    &__item:hover,
+    &__item:focus-visible {
+      color: lighten(#000, 25);
+    }
   }
 
   &__phonenumber {

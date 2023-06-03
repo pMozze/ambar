@@ -8,7 +8,6 @@
 @import 'components/logotype';
 @import 'components/button';
 @import 'components/section-header';
-@import 'components/bloom';
 @import 'components/icon';
 
 body {
@@ -82,8 +81,12 @@ body {
 
     &_right {
       z-index: -2;
+
       bottom: -10px;
       right: 0;
+
+      filter: blur(32px);
+      opacity: .05;
     }
   }
 }
@@ -163,21 +166,6 @@ body {
       margin-top: 115px;
       margin-right: auto;
       margin-left: auto;
-    }
-
-    > .bloom {
-      position: absolute;
-      z-index: 1;
-      opacity: .25;
-
-      &_1 {
-        transform: translateY(-40%);
-      }
-
-      &_2 {
-        z-index: -1;
-        transform: translate(-75%, -75%);
-      }
     }
   }
 
@@ -420,7 +408,7 @@ body {
   padding-top: 300px;
   padding-bottom: 200px;
 
-  background: linear-gradient(180deg, transparent 0%, #d0cbffa6 16.46%, #ADA5FFa6 32.6%, #867CF5a6 47.71%, #867CF5a6 60.21%, #867CF5a6 68.54%, #ADA5FFa6 78.96%, #D0CBFFa6 87.29%, transparent 98.75%);
+  background: linear-gradient(180deg, transparent 0%, rgba(208, 203, 255, 0.35) 16.46%, rgba(173, 165, 255, 0.651) 32.6%, rgba(134, 124, 245, 0.651) 47.71%, rgba(134, 124, 245, 0.65) 60.21%, rgba(134, 124, 245, 0.65) 68.54%, rgba(173, 165, 255, 0.65) 78.96%, rgba(208, 203, 255, 0.35) 87.29%, transparent 100%);
 
   .container {
     position: relative;
@@ -548,21 +536,31 @@ body {
         &__body {
           padding-right: 30px;
           padding-left: 30px;
+          padding-bottom: 32px;
         }
 
         &__image {
-          display: none;
+          margin-right: auto;
+          margin-left: auto;
+
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+
+          transform: none;
         }
       }
 
       .application-form {
+        flex-direction: column;
+
         &__image {
-          display: none;
+          order: 2;
         }
 
         &__body {
           padding-right: 30px;
           padding-left: 30px;
+          padding-bottom: 32px;
         }
       }
 
@@ -579,8 +577,11 @@ body {
       }
 
       .privacy {
-        &__image,
         &-avatars {
+          margin-top: 26px;
+        }
+
+        &__image {
           display: none;
         }
       }
@@ -657,13 +658,34 @@ body {
   }
 
   .advantages {
-    &__body > .button {
-      margin-top: 75px;
+    &__body {
+      > .button {
+        margin-top: 75px;
+      }
+
+      .search {
+        &__image {
+          border-radius: 0;
+        }
+      }
     }
 
     .finances {
+      padding: 0;
+
+      &__body {
+        padding-top: 60px;
+        padding-right: 48px;
+        padding-left: 48px;
+      }
+
       &__image {
-        display: none;
+        margin-top: 32px;
+
+        filter: none;
+        box-shadow: none;
+
+        border-radius: 0;
       }
     }
 
@@ -696,6 +718,7 @@ body {
   .demo {
     padding-top: 75px;
     padding-bottom: 75px;
+    background: linear-gradient(180deg, transparent, rgba(208, 203, 255, .65) 16.46%, rgba(173, 165, 255, .65) 32.6%, rgba(134, 124, 245, .5) 47.71%, rgba(134, 124, 245, .5) 60.21%, rgba(134, 124, 245, .45) 68.54%, rgba(173, 165, 255, .45) 78.96%, rgba(208, 203, 255, .35) 87.29%, transparent);
   }
 
   .faq {

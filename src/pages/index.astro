@@ -1,7 +1,7 @@
 ---
 import "../styles/main.scss";
 
-import { getEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -114,7 +114,6 @@ const faq = await getCollection("faq");
             </p>
           </div>
         </div>
-        <div class="bloom bloom_1"></div>
         <div class="finances">
           <div class="finances__body">
             <h3 class="finances__title">Полноценный раздел финансов</h3>
@@ -138,7 +137,6 @@ const faq = await getCollection("faq");
           />
         </div>
         <a class="button button_primary" href="#">Демо-версия сервиса</a>
-        <div class="bloom bloom_2"></div>
         <div class="privacy">
           <div class="privacy__body">
             <h3 class="privacy__title">
