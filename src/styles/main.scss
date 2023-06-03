@@ -51,6 +51,10 @@ body {
 
     transform: translateY(-50%);
     border-radius: 16px;
+
+    &_touch {
+      display: none;
+    }
   }
 
   &__background-image {
@@ -510,6 +514,12 @@ body {
     &__background-image {
       display: none;
     }
+
+    &__image_touch {
+      display: block;
+      position: unset;
+      transform: none;
+    }
   }
 
   .how-it-works {
@@ -577,12 +587,16 @@ body {
       }
 
       .privacy {
+        flex-direction: column;
+
         &-avatars {
-          margin-top: 26px;
+          display: none;
         }
 
         &__image {
-          display: none;
+          margin-top: 32px;
+          margin-right: auto;
+          margin-left: auto;
         }
       }
 
@@ -602,6 +616,8 @@ body {
       }
 
       .support {
+        flex-direction: column;
+
         &__title {
           width: 60%;
         }
@@ -611,7 +627,13 @@ body {
         }
 
         &__image {
-          display: none;
+          margin-top: 32px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .button {
+          margin-top: 64px;
         }
       }
     }
